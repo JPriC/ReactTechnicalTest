@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
-
 import classes from "./MainNavigation.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import FavoritesContext from "../../providers/favoritesContext";
 
 function MainNavigation() {
   const [showNavigation, setShowNavigation] = useState(true);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
 
+  const favoritesCtx = useContext(FavoritesContext);
+
+  /* FunciOn que maneja el scroll una vez es realizado en la pAgina */
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
     if (!ticking.current) {
       window.requestAnimationFrame(() => {
         if (currentScrollY > lastScrollY.current && currentScrollY > 75) {
+          /* Se cambia estado a false en caso de un scroll mayor a 75 */
           setShowNavigation(false);
         } else {
           setShowNavigation(true);
@@ -26,6 +30,7 @@ function MainNavigation() {
     }
   };
 
+  /* EventListener del scroll en la pAgina */
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -53,7 +58,9 @@ function MainNavigation() {
           <li>
             <Link to="/favorites">
               My Favorites
-              <span className={classes.badge}>{0}</span>
+              <span className={classes.badge}>
+                {favoritesCtx.totalFavorites}
+              </span>
             </Link>
           </li>
         </ul>

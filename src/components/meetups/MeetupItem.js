@@ -1,18 +1,54 @@
-import { useFetch } from "./../../util-hooks/useFetch";
+import { useContext, useState, useEffect } from "react";
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
+import FavoritesContext from "../../providers/favoritesContext";
 
-export default function MeetupItem() {
-  const { data } = useFetch({
-    url: "/data.json",
-  });
+function MeetupItem({ item }) {
+  const favoritesCtx = useContext(FavoritesContext);
+  const isFavorite = favoritesCtx.isFavorite(item.id);
 
-  if (!data) return <p>Loading...</p>;
-  let [item] = data;
+  const [showStar, setShowStar] = useState(isFavorite);
+  const [animateStar, setAnimateStar] = useState(false);
+  const [animateButton, setAnimateButton] = useState(false);
+
+  useEffect(() => {
+    if (isFavorite) {
+      setShowStar(true);
+      setAnimateStar(true);
+    } else if (!isFavorite && showStar) {
+      setAnimateStar(false);
+      const timer = setTimeout(() => {
+        setShowStar(false);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [isFavorite, showStar]);
+
+  function toggleFavoriteHandler() {
+    if (isFavorite) {
+      favoritesCtx.removeFavorite(item.id);
+    } else {
+      favoritesCtx.addFavorite(item);
+    }
+
+    setAnimateButton(true);
+    setTimeout(() => {
+      setAnimateButton(false);
+    }, 500);
+  }
 
   return (
-    <li className={classes.item} data-test='meet-up-item'>
+    <li className={classes.item} data-test="meet-up-item">
       <Card>
+        {showStar && (
+          <span
+            className={`${classes.star} ${
+              animateStar ? classes.fadeIn : classes.fadeOut
+            }`}
+          >
+            ⭐
+          </span>
+        )}
         <div className={classes.image}>
           <img src={item.image} alt={item.title} />
         </div>
@@ -22,9 +58,18 @@ export default function MeetupItem() {
           <p>{item.description}</p>
         </div>
         <div className={classes.actions}>
-          <button>Add to favorites</button>
+          <button
+            onClick={toggleFavoriteHandler}
+            className={`${classes.button} ${
+              isFavorite ? classes.favorited : ""
+            } ${animateButton ? classes.animateButton : ""}`}
+          >
+            {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+          </button>
         </div>
       </Card>
     </li>
   );
 }
+
+export default MeetupItem;

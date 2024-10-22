@@ -9,15 +9,64 @@
   {
     "id": "m2",
     "title": "This is a second meetup",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    "image": "https://cdn.pixabay.com/photo/2017/03/26/12/13/countryside-2175353_960_720.jpg",
     "address": "Meetupstreet 5, 12345 Meetup City",
-    "description": "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!"
+    "description": "This is a second, exciting meetup where participants can network and share ideas. Don't miss out!"
   },
   {
     "id": "m3",
     "title": "This is a third meetup",
     "image": "https://www.deutschakademie.de/muenchen/blog/wp-content/uploads/2021/03/Mu%CC%88nchen-Alemania.jpg",
     "address": "Meetupstreet 5, 12345 Meetup City",
-    "description": "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!"
+    "description": "Join our third meetup for insightful discussions and engaging activities. Perfect for enthusiasts and beginners alike."
+  },
+  {
+    "id": "m4",
+    "title": "Tech Innovations Summit",
+    "image": "https://cdn.pixabay.com/photo/2023/10/23/17/10/landscape-8336497_1280.jpg",
+    "address": "Tech Park Avenue 10, 67890 Innovation City",
+    "description": "A summit focused on the latest innovations in technology. Network with industry leaders and explore cutting-edge advancements."
+  },
+  {
+    "id": "m5",
+    "title": "Creative Writing Workshop",
+    "image": "https://cdn.pixabay.com/photo/2024/03/04/14/56/pagoda-8612554_1280.jpg",
+    "address": "Literature Lane 3, 54321 Writer's Town",
+    "description": "Enhance your creative writing skills in our interactive workshop. Open to all skill levels. Bring your ideas and let's create magic!"
+  },
+  {
+    "id": "m6",
+    "title": "Healthy Living Seminar",
+    "image": "https://cdn.pixabay.com/photo/2023/01/07/12/15/bridge-7703146_1280.jpg",
+    "address": "Wellness Street 8, 11223 Health City",
+    "description": "Join us for a seminar on healthy living. Learn about nutrition, exercise, and mental well-being from experts in the field."
+  },
+  {
+    "id": "m7",
+    "title": "Photography Enthusiasts Meetup",
+    "image": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+    "address": "Shutterbug Road 12, 33445 Photo Town",
+    "description": "A gathering for photography enthusiasts to share their work, discuss techniques, and embark on photo walks around the city."
+  },
+  {
+    "id": "m8",
+    "title": "Startup Pitch Night",
+    "image": "https://cdn.pixabay.com/photo/2023/05/17/08/55/tree-7999477_1280.jpg",
+    "address": "Entrepreneurial Avenue 7, 55667 Startup City",
+    "description": "Present your startup ideas to potential investors and receive valuable feedback. An excellent opportunity for budding entrepreneurs."
+  },
+  {
+    "id": "m9",
+    "title": "Yoga and Mindfulness Retreat",
+    "image": "https://cdn.pixabay.com/photo/2024/01/04/21/55/mountain-8488489_1280.jpg",
+    "address": "Serenity Boulevard 4, 77889 Peaceful Town",
+    "description": "Immerse yourself in a day of yoga and mindfulness practices. Perfect for relaxation, rejuvenation, and mental clarity."
+  },
+  {
+    "id": "m10",
+    "title": "Culinary Arts Festival",
+    "image": "https://cdn.pixabay.com/photo/2023/05/31/11/15/fish-8031138_1280.jpg",
+    "address": "Gourmet Street 15, 99000 Food City",
+    "description": "Experience a variety of culinary delights from top chefs. Participate in cooking demonstrations, tastings, and food competitions."
   }
 ]
