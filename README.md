@@ -39,54 +39,52 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## 🚀 Funcionalidades Implementadas
+## 🚀 Implemented Features
 
-### 1. **Header Animado con Control de Scroll**
+### 1. **Animated Header with Scroll Control**
 
-- **Qué Hace:** El header de la página se oculta cuando el usuario hace scroll hacia abajo y reaparece cuando hace scroll hacia arriba. Esto permite un acceso rápido a las distintas páginas sin que el header ocupe espacio innecesario.
-- **Cómo Lo Hice:**
-  - JavaScript para detectar la dirección del scroll.
-  - Aplicar clases CSS que controlan la visibilidad y la posición del header mediante transiciones suaves.
-  - Eventos de scroll al componente del header para manejar la lógica de mostrar u ocultar.
+- **What It Does:** The page header hides when the user scrolls down and reappears when the user scrolls up. This allows quick access to different pages without the header taking up unnecessary space.
+- **How I Did It:**
+  - Used JavaScript to detect the scroll direction.
+  - Applied CSS classes that control the header’s visibility and position through smooth transitions.
+  - Added scroll events to the header component to manage the logic for showing or hiding it.
 
-### 2. **Navegación con URLs Amigables para SEO**
+### 2. **SEO-Friendly URL Navigation**
 
-- **Qué Hace:** Desde el header, los usuarios pueden navegar a diferentes páginas de la aplicación, y cada navegación se refleja en la URL (por ejemplo, `/favorites` para la página de favoritos). Esto mejora el SEO y la usabilidad.
+- **What It Does:** From the header, users can navigate to different pages of the application, and each navigation is reflected in the URL (e.g., `/favorites` for the favorites page). This improves SEO and usability.
+- **How I Did It:**
+  - **React Router** to handle the application’s routing.
+  - Specific routes for each page (e.g., `/`, `/favorites`, `/all-meetups`).
+  - Updated the links in the header to use React Router’s navigation components, ensuring the URL changes appropriately when navigating.
 
-- **Cómo Lo Hice:**
-  - **React Router** para manejar las rutas de la aplicación.
-  - Rutas específicas para cada página (e.g., `/`, `/favorites`, `/all-meetups`).
-  - Actualizar los enlaces en el header para que utilicen los componentes de navegación de React Router, asegurando que la URL cambie adecuadamente al navegar.
+### 3. **Functional Add/Remove Favorites Button**
 
-### 3. **Botón de Añadir/Quitar de Favoritos Funcional**
+- **What It Does:** Users can add or remove meetups from their favorites list by clicking a button. This button visually changes its state to reflect whether the meetup is in favorites or not.
+- **How I Did It:**
+  - Implemented a **Context API** (`FavoritesContext`) to manage the global state of favorites.
+  - In the `MeetupItem` component, added logic to check if a meetup is in favorites and to add or remove it accordingly.
+  - Updated the button’s visual state using dynamic CSS classes that change the color and apply smooth animations on click.
 
-- **Qué Hace:** Los usuarios pueden añadir o quitar meetups de su lista de favoritos haciendo clic en un botón. Este botón cambia de estado visualmente para reflejar si el meetup está en favoritos o no.
+### 4. **Implementation of Tests**
 
-- **Cómo Lo Hice:**
-  - Implementamos un **Context API** (`FavoritesContext`) para manejar el estado global de los favoritos.
-  - En el componente `MeetupItem`, añadimos lógica para verificar si un meetup está en favoritos y para añadirlo o quitarlo según corresponda.
-  - Actualizamos el estado visual del botón mediante clases CSS dinámicas que cambian el color y aplican animaciones suaves al hacer clic.
+- **What It Does:** Added unit tests to ensure that main functionalities, such as adding and removing favorites, work correctly.
+- **How I Did It:**
+  - Used **Jest** and **React Testing Library** along with **Enzyme** to write unit tests.
+  - Wrote tests for the favorites context, verifying that the add and remove methods work as expected.
+  - Added tests for key components like `MeetupItem` and `Favorites` to ensure they render correctly and respond to user interactions.
 
-### 4. **Implementación de Tests**
+## 🛠️ Tools and Technologies Used
 
-- **Qué Hace:** Añadí pruebas unitarias para asegurar que las funcionalidades principales, como añadir y quitar favoritos, funcionan correctamente.
-- **Cómo Lo Hice:**
-  - Utilicé **Jest** y **React Testing Library** junto con **Enzyme** para escribir pruebas unitarias.
-  - Tests para el contexto de favoritos, verificando que los métodos de añadir y quitar funcionan como se espera.
-  - Añadí tests para componentes clave como `MeetupItem` y `Favorites` para asegurar que renderizan correctamente y responden a las interacciones del usuario.
+- **React**: Main library for building the user interface.
+- **React Router**: For handling navigation and routing within the application.
+- **Context API**: For managing the global state of favorites.
+- **CSS Modules**: For styling components in a modular way and avoiding name conflicts.
+- **Jest and React Testing Library**: For writing and running unit tests.
 
-## 🛠️ Herramientas y Tecnologías Utilizadas
+## 🎨 Styles and Animations
 
-- **React**: Biblioteca principal para construir la interfaz de usuario.
-- **React Router**: Para manejar la navegación y las rutas de la aplicación.
-- **Context API**: Para manejar el estado global de los favoritos.
-- **CSS Modules**: Para estilizar los componentes de manera modular y evitar conflictos de nombres.
-- **Jest y React Testing Library**: Para escribir y ejecutar tests unitarios.
-
-## 🎨 Estilos y Animaciones
-
-- **Scrollbar Personalizada:** Mejoramos la apariencia de la scrollbar en el contenedor `.content` del meetup.
-- **Animaciones Suaves:** Aplicamos transiciones suaves en el header y en los botones de favoritos para mejorar la experiencia de usuario, haciendo que las interacciones se sientan más fluidas y naturales.
+- **Custom Scrollbar:** Enhanced the appearance of the scrollbar in the `.content` container of the meetup.
+- **Smooth Animations:** Applied smooth transitions to the header and favorite buttons to improve the user experience, making interactions feel more fluid and natural.
 
 ## Learn More
 
