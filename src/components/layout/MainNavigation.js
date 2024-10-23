@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import { useContext, useEffect, useRef, useState } from "react";
 import FavoritesContext from "../../providers/favoritesContext";
 
 function MainNavigation() {
   const [showNavigation, setShowNavigation] = useState(true);
+
+  const location = useLocation();
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
 
@@ -49,14 +51,31 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link to="/">All Meetups</Link>
+            <Link
+              to="/"
+              className={location.pathname === "/" ? classes.active : ""}
+            >
+              All Meetups
+            </Link>
           </li>
 
           <li>
-            <Link to="/new-meetup">Add New Meetup</Link>
+            <Link
+              to="/new-meetup"
+              className={
+                location.pathname === "/new-meetup" ? classes.active : ""
+              }
+            >
+              Add New Meetup
+            </Link>
           </li>
           <li>
-            <Link to="/favorites">
+            <Link
+              to="/favorites"
+              className={
+                location.pathname === "/favorites" ? classes.active : ""
+              }
+            >
               My Favorites
               <span className={classes.badge}>
                 {favoritesCtx.totalFavorites}

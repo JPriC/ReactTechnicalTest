@@ -51,6 +51,10 @@
   color: white;
 }
 
+.active {
+  color: white;
+}
+
 .badge {
   background-color: #cc2062;
   color: white;

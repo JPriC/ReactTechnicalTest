@@ -2,8 +2,6 @@ import { useContext } from "react";
 import FavoritesContext from "../providers/favoritesContext";
 import MeetupItem from "../components/meetups/MeetupItem";
 import classes from "./../components/meetups/MeetupList.module.css";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import styles from "./Favorites.module.css";
 
 function FavoritesPage() {
   const favoritesCtx = useContext(FavoritesContext);
@@ -17,22 +15,11 @@ function FavoritesPage() {
     );
   } else {
     favoritesContent = (
-      <TransitionGroup component="ul" className={classes.list}>
+      <ul className={classes.list}>
         {favoritesCtx.favorites.map((item) => (
-          <CSSTransition
-            key={item.id}
-            timeout={300}
-            classNames={{
-              enter: styles.itemEnter,
-              enterActive: styles.itemEnterActive,
-              exit: styles.itemExit,
-              exitActive: styles.itemExitActive,
-            }}
-          >
-            <MeetupItem item={item} />
-          </CSSTransition>
+          <MeetupItem key={item.id} item={item} />
         ))}
-      </TransitionGroup>
+      </ul>
     );
   }
   return <section>{favoritesContent}</section>;

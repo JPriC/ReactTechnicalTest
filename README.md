@@ -67,16 +67,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
   - En el componente `MeetupItem`, añadimos lógica para verificar si un meetup está en favoritos y para añadirlo o quitarlo según corresponda.
   - Actualizamos el estado visual del botón mediante clases CSS dinámicas que cambian el color y aplican animaciones suaves al hacer clic.
 
-### 4. **Animaciones al Eliminar un Meetup de Favoritos**
-
-- **Qué Hace:** Cuando un usuario elimina un meetup de sus favoritos, la eliminación no es abrupta. En su lugar, el meetup se desvanece y se desliza fuera de la lista, proporcionando una experiencia más agradable.
-
-- **Cómo Lo Hice:**
-  - Integración de la librería **React Transition Group** para manejar las animaciones al montar y desmontar componentes.
-  - Envolvimos la lista de favoritos con `TransitionGroup` y cada `MeetupItem` con `CSSTransition` para aplicar clases de animación al entrar y salir.
-  - Definimos clases CSS específicas para controlar las transiciones de opacidad y movimiento, creando un efecto suave al eliminar items.
-
-### 5. **Implementación de Tests**
+### 4. **Implementación de Tests**
 
 - **Qué Hace:** Añadí pruebas unitarias para asegurar que las funcionalidades principales, como añadir y quitar favoritos, funcionan correctamente.
 - **Cómo Lo Hice:**
@@ -89,7 +80,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - **React**: Biblioteca principal para construir la interfaz de usuario.
 - **React Router**: Para manejar la navegación y las rutas de la aplicación.
 - **Context API**: Para manejar el estado global de los favoritos.
-- **React Transition Group**: Para implementar animaciones al eliminar meetups de favoritos.
 - **CSS Modules**: Para estilizar los componentes de manera modular y evitar conflictos de nombres.
 - **Jest y React Testing Library**: Para escribir y ejecutar tests unitarios.
 

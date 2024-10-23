@@ -3,7 +3,7 @@ import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
 import FavoritesContext from "../../providers/favoritesContext";
 
-function MeetupItem({ item }) {
+function MeetupItem({ item, className }) {
   const favoritesCtx = useContext(FavoritesContext);
   const isFavorite = favoritesCtx.isFavorite(item.id);
 
@@ -38,7 +38,10 @@ function MeetupItem({ item }) {
   }
 
   return (
-    <li className={classes.item} data-test="meet-up-item">
+    <li
+      className={`${classes.item} ${classes.showExit}`}
+      data-test="meet-up-item"
+    >
       <Card>
         {showStar && (
           <span
