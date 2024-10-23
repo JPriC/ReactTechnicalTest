@@ -44,25 +44,25 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ### 1. **Header Animado con Control de Scroll**
 
 - **Qué Hace:** El header de la página se oculta cuando el usuario hace scroll hacia abajo y reaparece cuando hace scroll hacia arriba. Esto permite un acceso rápido a las distintas páginas sin que el header ocupe espacio innecesario.
-- **Cómo Lo Hicimos:**
-  - Utilizamos JavaScript para detectar la dirección del scroll.
-  - Aplicamos clases CSS que controlan la visibilidad y la posición del header mediante transiciones suaves.
-  - Añadimos eventos de scroll al componente del header para manejar la lógica de mostrar u ocultar.
+- **Cómo Lo Hice:**
+  - JavaScript para detectar la dirección del scroll.
+  - Aplicar clases CSS que controlan la visibilidad y la posición del header mediante transiciones suaves.
+  - Eventos de scroll al componente del header para manejar la lógica de mostrar u ocultar.
 
 ### 2. **Navegación con URLs Amigables para SEO**
 
 - **Qué Hace:** Desde el header, los usuarios pueden navegar a diferentes páginas de la aplicación, y cada navegación se refleja en la URL (por ejemplo, `/favorites` para la página de favoritos). Esto mejora el SEO y la usabilidad.
 
-- **Cómo Lo Hicimos:**
-  - Utilizamos **React Router** para manejar las rutas de la aplicación.
-  - Configuramos rutas específicas para cada página (e.g., `/`, `/favorites`, `/all-meetups`).
-  - Actualizamos los enlaces en el header para que utilicen los componentes de navegación de React Router, asegurando que la URL cambie adecuadamente al navegar.
+- **Cómo Lo Hice:**
+  - **React Router** para manejar las rutas de la aplicación.
+  - Rutas específicas para cada página (e.g., `/`, `/favorites`, `/all-meetups`).
+  - Actualizar los enlaces en el header para que utilicen los componentes de navegación de React Router, asegurando que la URL cambie adecuadamente al navegar.
 
 ### 3. **Botón de Añadir/Quitar de Favoritos Funcional**
 
 - **Qué Hace:** Los usuarios pueden añadir o quitar meetups de su lista de favoritos haciendo clic en un botón. Este botón cambia de estado visualmente para reflejar si el meetup está en favoritos o no.
 
-- **Cómo Lo Hicimos:**
+- **Cómo Lo Hice:**
   - Implementamos un **Context API** (`FavoritesContext`) para manejar el estado global de los favoritos.
   - En el componente `MeetupItem`, añadimos lógica para verificar si un meetup está en favoritos y para añadirlo o quitarlo según corresponda.
   - Actualizamos el estado visual del botón mediante clases CSS dinámicas que cambian el color y aplican animaciones suaves al hacer clic.
@@ -71,7 +71,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 - **Qué Hace:** Cuando un usuario elimina un meetup de sus favoritos, la eliminación no es abrupta. En su lugar, el meetup se desvanece y se desliza fuera de la lista, proporcionando una experiencia más agradable.
 
-- **Cómo Lo Hicimos:**
+- **Cómo Lo Hice:**
   - Integración de la librería **React Transition Group** para manejar las animaciones al montar y desmontar componentes.
   - Envolvimos la lista de favoritos con `TransitionGroup` y cada `MeetupItem` con `CSSTransition` para aplicar clases de animación al entrar y salir.
   - Definimos clases CSS específicas para controlar las transiciones de opacidad y movimiento, creando un efecto suave al eliminar items.
@@ -81,8 +81,8 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - **Qué Hace:** Añadí pruebas unitarias para asegurar que las funcionalidades principales, como añadir y quitar favoritos, funcionan correctamente.
 - **Cómo Lo Hice:**
   - Utilicé **Jest** y **React Testing Library** junto con **Enzyme** para escribir pruebas unitarias.
-  - Creé tests para el contexto de favoritos, verificando que los métodos de añadir y quitar funcionan como se espera.
-  - Añadí tests para componentes clave como `MeetupItem` y `FavoritesPage` para asegurar que renderizan correctamente y responden a las interacciones del usuario.
+  - Tests para el contexto de favoritos, verificando que los métodos de añadir y quitar funcionan como se espera.
+  - Añadí tests para componentes clave como `MeetupItem` y `Favorites` para asegurar que renderizan correctamente y responden a las interacciones del usuario.
 
 ## 🛠️ Herramientas y Tecnologías Utilizadas
 
@@ -95,7 +95,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## 🎨 Estilos y Animaciones
 
-- **Scrollbar Personalizada:** Mejoramos la apariencia de la scrollbar en el contenedor `.content` para que tenga un diseño más moderno y minimalista, utilizando CSS para WebKit y Firefox.
+- **Scrollbar Personalizada:** Mejoramos la apariencia de la scrollbar en el contenedor `.content` del meetup.
 - **Animaciones Suaves:** Aplicamos transiciones suaves en el header y en los botones de favoritos para mejorar la experiencia de usuario, haciendo que las interacciones se sientan más fluidas y naturales.
 
 ## Learn More
