@@ -45,23 +45,23 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 - **What It Does:** The page header hides when the user scrolls down and reappears when the user scrolls up. This allows quick access to different pages without the header taking up unnecessary space.
 - **How I Did It:**
-  - Used JavaScript to detect the scroll direction.
-  - Applied CSS classes that control the header’s visibility and position through smooth transitions.
-  - Added scroll events to the header component to manage the logic for showing or hiding it.
+  - At `MainNavigation.js`: Used an event listener inside useEffect() to detect the scroll, and created handleScroll function to change the navbar state.
+  - At `MainNavigation.css`: Applied CSS classes that control the header’s visibility and position through smooth transitions.
 
 ### 2. **SEO-Friendly URL Navigation**
 
 - **What It Does:** From the header, users can navigate to different pages of the application, and each navigation is reflected in the URL (e.g., `/favorites` for the favorites page). This improves SEO and usability.
 - **How I Did It:**
-  - **React Router** to handle the application’s routing.
+  - `React Router` to handle the application’s routing, through `react-router-dom` dependency.
   - Specific routes for each page (e.g., `/`, `/favorites`, `/all-meetups`).
-  - Updated the links in the header to use React Router’s navigation components, ensuring the URL changes appropriately when navigating.
+  - Updated the links in the header to use `Link`, to navigate through the different routes and `useLocation`, to get the current route.
 
 ### 3. **Functional Add/Remove Favorites Button**
 
 - **What It Does:** Users can add or remove meetups from their favorites list by clicking a button. This button visually changes its state to reflect whether the meetup is in favorites or not.
 - **How I Did It:**
-  - Implemented a **Context API** (`FavoritesContext`) to manage the global state of favorites.
+  - Implemented a **Context API** (`favoritesContext.js`) to manage the global state of favorites.
+  -
   - In the `MeetupItem` component, added logic to check if a meetup is in favorites and to add or remove it accordingly.
   - Updated the button’s visual state using dynamic CSS classes that change the color and apply smooth animations on click.
 

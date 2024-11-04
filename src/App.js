@@ -51,7 +51,7 @@ function App() {
             element={<NewMeetupsPage onAddMeetup={addMeetupHandler} />}
           />
           <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<Navigate to="/meetups" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Layout>
     </Router>
