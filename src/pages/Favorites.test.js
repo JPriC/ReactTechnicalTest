@@ -1,4 +1,3 @@
-/* eslint-disable testing-library/no-debugging-utils */
 import React from "react";
 import { mount } from "enzyme";
 import Favorites from "./Favorites";

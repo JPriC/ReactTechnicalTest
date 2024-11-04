@@ -43,48 +43,48 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### 1. **Animated Header with Scroll Control**
 
-- **What It Does:** The page header hides when the user scrolls down and reappears when the user scrolls up. This allows quick access to different pages without the header taking up unnecessary space.
-- **How I Did It:**
-  - At `MainNavigation.js`: Used an event listener inside useEffect() to detect the scroll, and created handleScroll function to change the navbar state.
-  - At `MainNavigation.css`: Applied CSS classes that control the header’s visibility and position through smooth transitions.
+- **Functionality:** The page header hides when the user scrolls down and reappears when the user scrolls up, allowing easy access to different pages without the header occupying unnecessary space.
+- **Implementation Details:**
+  - In `MainNavigation.js`: Added an event listener within `useEffect()` to detect scrolling, and created a `handleScroll` function to manage the navbar’s state.
+  - In `MainNavigation.css`: Applied CSS classes that control the header’s visibility and position with smooth transitions.
 
 ### 2. **SEO-Friendly URL Navigation**
 
-- **What It Does:** From the header, users can navigate to different pages of the application, and each navigation is reflected in the URL (e.g., `/favorites` for the favorites page). This improves SEO and usability.
-- **How I Did It:**
-  - `React Router` to handle the application’s routing, through `react-router-dom` dependency.
-  - Specific routes for each page (e.g., `/`, `/favorites`, `/all-meetups`).
-  - Updated the links in the header to use `Link`, to navigate through the different routes and `useLocation`, to get the current route.
+- **Functionality:** Users can navigate to different pages from the header, with each navigation reflected in the URL (e.g., `/favorites` for the favorites page), enhancing SEO and usability.
+- **Implementation Details:**
+  - Used `React Router` (via the `react-router-dom` dependency) to manage routing within the application.
+  - Defined specific routes for each page (e.g., `/`, `/favorites`, `/all-meetups`).
+  - Updated header links to use `Link` for navigation and `useLocation` to access the current route.
 
 ### 3. **Functional Add/Remove Favorites Button**
 
-- **What It Does:** Users can add or remove meetups from their favorites list by clicking a button. This button visually changes its state to reflect whether the meetup is in favorites or not.
-- **How I Did It:**
-  - Implemented a **Context API** (`favoritesContext.js`) to manage the global state of favorites.
-  -
-  - In the `MeetupItem` component, added logic to check if a meetup is in favorites and to add or remove it accordingly.
-  - Updated the button’s visual state using dynamic CSS classes that change the color and apply smooth animations on click.
+- **Functionality:** Users can add or remove meetups from their favorites list by clicking a button that visually changes state to indicate whether the meetup is favorited.
+- **Implementation Details:**
+  - Implemented **Context API** (`favoritesContext.js`) to manage the global state of favorites.
+  - Used `localStorage` as a temporary solution, given that the backend storage solution for favorites is not yet determined.
+  - In the `MeetupItem` component, added logic to check if a meetup is in favorites and toggle its status accordingly.
+  - Updated the button’s visual state with dynamic CSS classes, which change the color and apply smooth animations on click.
 
-### 4. **Implementation of Tests**
+### 4. **Testing Implementation**
 
-- **What It Does:** Added unit tests to ensure that main functionalities, such as adding and removing favorites, work correctly.
-- **How I Did It:**
-  - Used **Jest** and **React Testing Library** along with **Enzyme** to write unit tests.
-  - Wrote tests for the favorites context, verifying that the add and remove methods work as expected.
-  - Added tests for key components like `MeetupItem` and `Favorites` to ensure they render correctly and respond to user interactions.
+- **Functionality:** Added unit tests to verify that core functionalities, such as adding and removing favorites, work correctly.
+- **Implementation Details:**
+  - Utilized `Jest` and `React Testing Library` alongside `Enzyme` to write unit tests.
+  - Wrote tests for the favorites context to verify the add and remove methods.
+  - Added tests for key components like `MeetupItem` and `Favorites` to confirm correct rendering and responsiveness to user interactions.
 
 ## 🛠️ Tools and Technologies Used
 
-- **React**: Main library for building the user interface.
-- **React Router**: For handling navigation and routing within the application.
-- **Context API**: For managing the global state of favorites.
-- **CSS Modules**: For styling components in a modular way and avoiding name conflicts.
-- **Jest and React Testing Library**: For writing and running unit tests.
+- `React`: Primary library for building the user interface.
+- `React Router`: For managing navigation and routing within the application.
+- `Context API`: For global state management of favorites.
+- `CSS Modules`: For component-based styling and avoiding naming conflicts.
+- `Jest and React Testing Library`: For unit testing.
 
 ## 🎨 Styles and Animations
 
-- **Custom Scrollbar:** Enhanced the appearance of the scrollbar in the `.content` container of the meetup.
-- **Smooth Animations:** Applied smooth transitions to the header and favorite buttons to improve the user experience, making interactions feel more fluid and natural.
+- **Custom Scrollbar:** Enhanced the scrollbar’s appearance in the `.content` container for the meetup.
+- **Smooth Animations:** Applied smooth transitions to the header and favorite buttons, enhancing user experience by making interactions feel more fluid and natural.
 
 ## Learn More
 
